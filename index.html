@@ -20,27 +20,15 @@
       <span class="bookdata">Author: unknown</span>
       <span class="bookdata">Title: LOTR</span>
       <span class="bookdata">Pages: 124</span>
-    </div>
-    <div class="book">
-      <span class="bookdata">Book ID: 213545</span>
-      <span class="bookdata">Author: unknown</span>
-      <span class="bookdata">Title: LOTR</span>
-      <span class="bookdata">Pages: 124</span>
-    </div>
-    <div class="book">
-      <span class="bookdata">Book ID: 213545</span>
-      <span class="bookdata">Author: unknown</span>
-      <span class="bookdata">Title: LOTR</span>
-      <span class="bookdata">Pages: 124</span>
-    </div>
+    </div>    
   </div>
 <dialog id="inputNewBook">
-  <form method="dialog">
+  <form id="bookForm" method="dialog">
     <h3>Input New Book Data</h3>
-    <input type="text" placeholder="Book Author">
-    <input type="text" placeholder="Book Title">
-    <input type="number" placeholder="Number of Pages">
-    <button type="submit">Submit</button>
+    <input type="text" placeholder="Book Author" id="authorInput">
+    <input type="text" placeholder="Book Title" id="titleInput">
+    <input type="number" placeholder="Number of Pages" id="pageInput">
+    <button type="submit" id="submitInputButton">Submit</button>
   </form>
 </dialog>
 </body>
