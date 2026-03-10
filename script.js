@@ -69,6 +69,16 @@ submitInputButton.onclick = () => {
   }
 }
 
+const removeButton = document.getElementById('removeButton');
+removeButton.onclick=() => {  
+  if (myLibrary.length > 0) {
+    let removedBook = myLibrary.pop();
+    showLibrary(myLibrary);
+  } else {
+    alert("No More Books!");
+  }  
+}
+
 
 
 
