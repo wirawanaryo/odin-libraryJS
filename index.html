@@ -25,11 +25,12 @@
 <dialog id="inputNewBook">
   <form id="bookForm" method="dialog">
     <h3>Input New Book Data</h3>
-    <input type="text" placeholder="Book Author" id="authorInput">
-    <input type="text" placeholder="Book Title" id="titleInput">
-    <input type="number" placeholder="Number of Pages" id="pageInput">
-    <button type="submit" id="submitInputButton">Submit</button>
-  </form>
+    <input type="text" placeholder="Book Author" id="authorInput" required>
+    <input type="text" placeholder="Book Title" id="titleInput" required>
+    <input type="number" placeholder="Number of Pages" id="pageInput" required>       
+  </form><br>
+  <button type="submit" id="submitInputButton" form="bookForm">Submit</button> 
+  <button commandfor="inputNewBook" command="close">Cancel</button>
 </dialog>
 </body>
 

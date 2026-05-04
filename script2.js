@@ -17,7 +17,7 @@ class library {
 
   addBookToLibrary(book) {
     this.books.push(book);
-  }  
+  }
 
   showLibrary() {
     const bookShelf = document.querySelector('.bookShelf');
@@ -55,7 +55,7 @@ class library {
     return this.books.length;
   }
 
-  removeLatest(){
+  removeLatest() {
     let removedBook = this.books.pop();
     this.showLibrary();
   }
@@ -66,12 +66,28 @@ const addButton = document.getElementById('addButton');
 const inputNewBookDialog = document.getElementById('inputNewBook')
 addButton.onclick = () => inputNewBookDialog.showModal();
 
+const form = document.getElementById("bookForm")
+const authorField = document.getElementById('authorInput');
+const titleField = document.getElementById('titleInput');
+const pageField = document.getElementById('pageInput');
+
+function changeValMsg(dom, msg) {
+  if (dom.validity.valueMissing) {
+    dom.setCustomValidity(msg);
+  } else {
+    dom.setCustomValidity("");
+  }
+}
+
 const submitInputButton = document.getElementById('submitInputButton')
 submitInputButton.onclick = () => {
-  const bookForm = document.getElementById("bookForm")
-  const authorInput = document.getElementById('authorInput').value;
-  const titleInput = document.getElementById('titleInput').value;
-  const pageInput = document.getElementById('pageInput').value;
+  changeValMsg(authorField, "Please input the name of the author, if anonym just fill with anonym");
+  changeValMsg(titleField, "Theres no book without title, even if it is just type untitled");
+
+  const bookForm = form;
+  const authorInput = authorField.value;
+  const titleInput = titleField.value;
+  const pageInput = pageField.value;
 
   if (authorInput && titleInput && pageInput) {
     const newBook = new Book(authorInput, titleInput, pageInput);
@@ -82,15 +98,15 @@ submitInputButton.onclick = () => {
     console.log(pageInput);
 
   } else {
-    alert("Please fill all data!");
+    // alert("Please fill all data!");
   }
 }
 
 const removeButton = document.getElementById('removeButton');
-removeButton.onclick=() => {  
+removeButton.onclick = () => {
   if (mylibrary.libSize > 0) {
     mylibrary.removeLatest();
   } else {
     alert("No More Books!");
-  }  
+  }
 }
