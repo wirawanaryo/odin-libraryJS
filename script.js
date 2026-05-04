@@ -15,6 +15,7 @@ function addBookToLibrary(authorInput,titleInput,pageInput) {
 
 function showLibrary(library) {
   const bookShelf = document.querySelector('.bookShelf');
+  // render ulang library
   bookShelf.innerHTML = "";
   for (let i = 0; i < library.length; i++) {      
     const bookDiv = document.createElement('div');
